@@ -42,20 +42,16 @@ if (!isset($_SESSION['user_id'])) {
             </form>
         </div>
 
-        <!-- Task List -->
         <div class="bg-white p-6 rounded-lg shadow">
             <h2 class="text-xl font-bold mb-4">Your Tasks</h2>
             <div id="taskList" class="space-y-4">
-                <!-- Tasks will be loaded here -->
             </div>
         </div>
     </div>
 
     <script>
-        // Load tasks when page loads
         document.addEventListener('DOMContentLoaded', loadTasks);
 
-        // Add task form submission
         document.getElementById('taskForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
@@ -83,7 +79,6 @@ if (!isset($_SESSION['user_id'])) {
             }
         });
 
-        // Load tasks function
         async function loadTasks() {
             try {
                 const response = await fetch('api/tasks.php');
@@ -112,7 +107,6 @@ if (!isset($_SESSION['user_id'])) {
             }
         }
 
-        // Toggle task status
         async function toggleStatus(taskId) {
             try {
                 const response = await fetch(`api/tasks.php`, {
@@ -133,8 +127,6 @@ if (!isset($_SESSION['user_id'])) {
                 console.error('Error:', error);
             }
         }
-
-        // Delete task
         async function deleteTask(taskId) {
             if (confirm('Are you sure you want to delete this task?')) {
                 try {

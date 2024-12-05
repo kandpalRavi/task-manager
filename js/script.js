@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     loadTasks();
     loadCategories();
 
-    // Add Task Button Click
     document.getElementById('add-task').addEventListener('click', () => {
         showTaskModal();
     });

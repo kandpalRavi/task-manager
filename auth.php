@@ -15,7 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['username'] = $user['username'];
         header('Location: index.php');
     } else {
-        // Redirect back to the login page with an error message
         header('Location: login.php?error=Invalid username or password');
     }
 }
